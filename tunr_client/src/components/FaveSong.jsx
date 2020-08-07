@@ -9,8 +9,8 @@ const FaveSong = ({ playlist }) => {
           return (
             <>
               <h3>{song.title}</h3>
-              <h3>{song.name}</h3>
-              <h3>{song.time}</h3>
+              <p>{song.artist}</p>
+              <p>{song.time}</p>
             </>
           );
         }

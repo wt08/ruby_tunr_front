@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import EachSong from "./EachSong";
-import FaveSong from './FaveSong'
+import FaveSong from "./FaveSong";
+import SongCreate from "./SongCreate";
 
 const Playlist = () => {
   const [playlist, setPlaylist] = useState([]);
-  console.log(playlist);
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -23,7 +23,8 @@ const Playlist = () => {
   return (
     <div>
       <EachSong playlist={playlist} />
-      <FaveSong playlist={playlist}/>
+      <FaveSong playlist={playlist} />
+      <SongCreate playlist={playlist} />
     </div>
   );
 };
