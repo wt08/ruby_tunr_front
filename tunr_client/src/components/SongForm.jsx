@@ -8,21 +8,18 @@ const SongForm = ({ handleSubmit, handleChange, playlist }) => {
   return (
     <div className="SongForm">
       <form id="form" onSubmit={handleSubmit}>
-        <label>Title</label>
         <input
           placeholder="Title"
           value={playlist.title}
           name="title"
           onChange={handleChange}
         />
-        <label>Artist</label>
         <input
           placeholder="Artist"
           value={playlist.artist}
           name="artist"
           onChange={handleChange}
         />
-        <label>Time</label>
         <input
           placeholder="Time"
           value={playlist.time}
@@ -30,7 +27,7 @@ const SongForm = ({ handleSubmit, handleChange, playlist }) => {
           onChange={handleChange}
         />
 
-<Button variant="outline-dark">Submit</Button>
+<Button variant="outline-light">Submit</Button>
 
       </form>
     </div>

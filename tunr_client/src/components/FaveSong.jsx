@@ -33,7 +33,7 @@ const FaveSong = ({ playlist }) => {
       {playlist.map((song) => {
         if (song.isFave) {
           return (
-            <Card body>
+            <Card bg='warning' body>
               <div className="oneSong">
                 <h3 className="unit">{song.title}</h3>
                 <p className="unit">{song.artist}</p>
