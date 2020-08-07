@@ -26,6 +26,7 @@ const SongCreate = (props) => {
       method: "POST",
       data: newSong,
     })
+      .then(() => window.location.reload(false))
       .catch(console.error);
   };
 

@@ -1,12 +1,15 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 
 const EachSong = ({ playlist }) => {
-  const handleSubmit = (songId) => {
+
+    const handleSubmit = (songId) => {
     axios({
       url: `http://localhost:3000/playlists/2/songs/${songId}`,
       method: "DELETE",
-    }).catch(console.error);
+    })
+    .then(() => window.location.reload(false))
+    .catch(console.error);
   };
 
   return (
