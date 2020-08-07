@@ -6,6 +6,7 @@ import SongCreate from "./SongCreate";
 
 const Playlist = () => {
   const [playlist, setPlaylist] = useState([]);
+  const [playlistName, setPlaylistName] = useState('')
 
   useEffect(() => {
     const makeAPICall = async () => {
@@ -14,14 +15,17 @@ const Playlist = () => {
         .then((res) => {
           const data = res.data;
           setPlaylist(data.songs);
+          setPlaylistName(data.name)
         })
         .catch(console.error);
     };
     makeAPICall();
   }, []);
 
+  console.log(playlist.name)
   return (
     <div>
+      <h2>{playlistName}</h2>
       <EachSong playlist={playlist} />
       <FaveSong playlist={playlist} />
       <SongCreate playlist={playlist} />
