@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const FaveButton = ({ id }) => {
   const handleClick = () => {
@@ -14,7 +16,7 @@ const FaveButton = ({ id }) => {
 
   return (
     <div>
-      <button onClick={handleClick}>Fave</button>
+       <FontAwesomeIcon color='gray' onClick={handleClick} icon={faHeart} />
     </div>
   );
 };

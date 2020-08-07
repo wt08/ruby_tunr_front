@@ -3,6 +3,8 @@ import axios from "axios";
 import FaveButton from "./FaveButton";
 import "./eachSong.css";
 import Card from "react-bootstrap/Card";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const EachSong = ({ playlist }) => {
   const handleSubmit = (songId) => {
@@ -15,23 +17,27 @@ const EachSong = ({ playlist }) => {
   };
 
   return (
-   
     <div className="EachSong">
       {playlist.map((song) => {
         return (
           <Card body>
-          <div className="oneSong">
+            <div className="oneSong">
               <h3 className="unit">{song.title}</h3>
               <p className="unit">{song.artist}</p>
               <p className="unit">{song.time}</p>
-              <FaveButton className="unit"
+              <FaveButton
+                className="unit"
                 id={song.id}
                 title={song.title}
                 artist={song.artist}
                 time={song.time}
               />
-              <button className="unit" onClick={() => handleSubmit(song.id)}>Delete</button>
-              </div>
+              <FontAwesomeIcon
+                className="unit"
+                onClick={() => handleSubmit(song.id)}
+                icon={faTimesCircle}
+              />
+            </div>
           </Card>
         );
       })}
