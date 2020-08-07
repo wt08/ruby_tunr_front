@@ -1,33 +1,38 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import FaveButton from './FaveButton'
+import FaveButton from "./FaveButton";
+import "./eachSong.css";
+import Card from "react-bootstrap/Card";
 
 const EachSong = ({ playlist }) => {
-
-    const handleSubmit = (songId) => {
+  const handleSubmit = (songId) => {
     axios({
       url: `http://localhost:3000/playlists/2/songs/${songId}`,
       method: "DELETE",
     })
-    .then(() => window.location.reload(false))
-    .catch(console.error);
+      .then(() => window.location.reload(false))
+      .catch(console.error);
   };
 
   return (
-    <div>
+   
+    <div className="EachSong">
       {playlist.map((song) => {
         return (
-          <>
-            <h3>{song.title}</h3>
-            <p>{song.artist}</p>
-            <p>{song.time}</p>
-            <FaveButton 
-            id={song.id}
-            title={song.title}
-            artist={song.artist}
-            time={song.time}/>
-            <button onClick={() => handleSubmit(song.id)}>Delete</button>
-          </>
+          <Card body>
+          <div className="oneSong">
+              <h3 className="unit">{song.title}</h3>
+              <p className="unit">{song.artist}</p>
+              <p className="unit">{song.time}</p>
+              <FaveButton className="unit"
+                id={song.id}
+                title={song.title}
+                artist={song.artist}
+                time={song.time}
+              />
+              <button className="unit" onClick={() => handleSubmit(song.id)}>Delete</button>
+              </div>
+          </Card>
         );
       })}
     </div>

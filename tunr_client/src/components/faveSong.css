@@ -1,0 +1,8 @@
+.oneSong {
+  display: flex;
+  justify-content: space-around;
+}
+
+.unit {
+  width: 18%;
+}

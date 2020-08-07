@@ -3,6 +3,7 @@ import axios from "axios";
 import EachSong from "./EachSong";
 import FaveSong from "./FaveSong";
 import SongCreate from "./SongCreate";
+import "./playlist.css";
 
 const Playlist = () => {
   const [playlist, setPlaylist] = useState([]);
@@ -24,7 +25,7 @@ const Playlist = () => {
 
   console.log(playlist.name)
   return (
-    <div>
+    <div className="Playlist">
       <h2>{playlistName}</h2>
       <EachSong playlist={playlist} />
       <FaveSong playlist={playlist} />

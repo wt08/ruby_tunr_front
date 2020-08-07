@@ -4,6 +4,7 @@ import "./App.css";
 import Layout from "./components/Layout";
 import { Route, Switch } from "react-router-dom";
 import HomePage from './components/HomePage'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

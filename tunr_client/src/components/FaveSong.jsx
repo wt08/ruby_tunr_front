@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
 import UnfaveButton from './UnfaveButton'
+import "./faveSong.css";
+import Card from "react-bootstrap/Card";
+
 
 const FaveSong = ({ playlist }) => {
   const handleSubmit = (songId) => {
@@ -17,13 +20,15 @@ const FaveSong = ({ playlist }) => {
       {playlist.map((song) => {
         if (song.isFave) {
           return (
-            <>
-              <h3>{song.title}</h3>
-              <p>{song.artist}</p>
-              <p>{song.time}</p>
-              <UnfaveButton id={song.id}/>
-              <button onClick={() => handleSubmit(song.id)}>Delete</button>
-            </>
+            <Card body>
+              <div className="oneSong">
+              <h3 className="unit">{song.title}</h3>
+              <p className="unit">{song.artist}</p>
+              <p className="unit">{song.time}</p>
+              <UnfaveButton className="unit" id={song.id}/>
+              <button className="unit" onClick={() => handleSubmit(song.id)}>Delete</button>
+              </div>
+            </Card>
           );
         }
       })}
