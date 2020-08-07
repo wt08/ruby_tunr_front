@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import UnfaveButton from './UnfaveButton'
 
 const FaveSong = ({ playlist }) => {
   const handleSubmit = (songId) => {
@@ -20,6 +21,7 @@ const FaveSong = ({ playlist }) => {
               <h3>{song.title}</h3>
               <p>{song.artist}</p>
               <p>{song.time}</p>
+              <UnfaveButton id={song.id}/>
               <button onClick={() => handleSubmit(song.id)}>Delete</button>
             </>
           );

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import FaveButton from './FaveButton'
 
 const EachSong = ({ playlist }) => {
 
@@ -20,6 +21,11 @@ const EachSong = ({ playlist }) => {
             <h3>{song.title}</h3>
             <p>{song.artist}</p>
             <p>{song.time}</p>
+            <FaveButton 
+            id={song.id}
+            title={song.title}
+            artist={song.artist}
+            time={song.time}/>
             <button onClick={() => handleSubmit(song.id)}>Delete</button>
           </>
         );
