@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button'
+import "./songForm.css";
 
 const SongForm = ({ handleSubmit, handleChange, playlist }) => {
 
   return (
-    <div>
+    <div className="SongForm">
       <form id="form" onSubmit={handleSubmit}>
         <label>Title</label>
         <input
@@ -15,7 +17,7 @@ const SongForm = ({ handleSubmit, handleChange, playlist }) => {
         />
         <label>Artist</label>
         <input
-          placeholdeartistr="Artist"
+          placeholder="Artist"
           value={playlist.artist}
           name="artist"
           onChange={handleChange}
@@ -28,7 +30,7 @@ const SongForm = ({ handleSubmit, handleChange, playlist }) => {
           onChange={handleChange}
         />
 
-        <button type="submit">Submit</button>
+<Button variant="outline-dark">Submit</Button>
 
       </form>
     </div>

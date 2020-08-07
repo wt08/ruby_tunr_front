@@ -6,3 +6,22 @@
 .unit {
   width: 18%;
 }
+
+.FaveSong {
+    margin-bottom: 30px;
+}
+
+.FaveSong h2 {
+padding-top: 50px;
+
+}
+
+.FaveSong h3 {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
+}
+
+.FaveSong p {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+}

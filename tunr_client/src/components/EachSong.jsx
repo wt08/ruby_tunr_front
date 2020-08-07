@@ -7,6 +7,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const EachSong = ({ playlist }) => {
+  const convertSeconds = (seconds) => {
+    let minutes = Math.floor(seconds / 60);
+    let remaining = seconds - minutes * 60;
+    if (remaining > 9) {
+      return `${minutes}:${remaining}`;
+    } else {
+      return `${minutes}:0${remaining}`;
+    }
+  };
   const handleSubmit = (songId) => {
     axios({
       url: `http://localhost:3000/playlists/2/songs/${songId}`,
@@ -24,7 +33,7 @@ const EachSong = ({ playlist }) => {
             <div className="oneSong">
               <h3 className="unit">{song.title}</h3>
               <p className="unit">{song.artist}</p>
-              <p className="unit">{song.time}</p>
+              <p className="unit">{convertSeconds(song.time)}</p>
               <FaveButton
                 className="unit"
                 id={song.id}

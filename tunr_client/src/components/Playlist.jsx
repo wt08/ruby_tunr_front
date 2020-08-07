@@ -26,10 +26,12 @@ const Playlist = () => {
   console.log(playlist.name)
   return (
     <div className="Playlist">
-      <h2>{playlistName}</h2>
+      <h2>Playlist: {playlistName}</h2>
+      <h3 className="addSong">Add a Song</h3>
+      <SongCreate playlist={playlist} />
       <EachSong playlist={playlist} />
       <FaveSong playlist={playlist} />
-      <SongCreate playlist={playlist} />
+      
     </div>
   );
 };
